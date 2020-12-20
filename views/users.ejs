@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script defer src="http://localhost:4000/socket.io/socket.io.js"></script>
+    <script defer src="script.js"></script>
+    <!-- <script  src="/socket.io/socket.io.js"></script> -->
+    <script>
+        const userName = "<%= userName %>"    
+      </script>
+
+</head>
+
+<body onload="makeConnection()">
+
+    <% for(var i=0; i < rows.length; i++) { %>
+    <tr>
+        <div><a href="/create_room?user2=<%= rows[i].userName  %>&user1=<%= userName %>"><%= rows[i].userName %></a> </div>
+    </tr>
+    <% } %>
+</body>
+
+</html>
